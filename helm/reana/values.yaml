@@ -166,6 +166,11 @@ interactive_sessions:
           name: "Jupyter SciPy Notebook 7.6.3"
       allow_custom: false
   maximum_inactivity_period: forever
+  sidecars:
+    datastore:
+      enabled: false
+      image: ""
+      imagePullSecret: ""
 
 compute_backends:
   - kubernetes
@@ -436,6 +441,7 @@ components:
     environment: {}
   reana_job_controller:
     image: docker.io/reanahub/reana-job-controller:0.95.0-alpha.6
+    imagePullSecret: ""
     environment: {}
     uwsgi:
       threads: 2

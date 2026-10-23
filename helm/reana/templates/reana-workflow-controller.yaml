@@ -384,7 +384,7 @@ spec:
           # configurations for datastore sidecar
           - name: REANA_DATASTORE_ENABLED
             value: {{ .Values.sidecars.datastore.enabled | quote }}
-          {{- if .Values.interactive_sessions.sidecars.datastore.enabled }}
+          {{- if .Values.sidecars.datastore.enabled }}
           - name: REANA_DATASTORE_IMAGE
             value: {{ required "sidecars.datastore.image must be set when sidecars.datastore.enabled is true (e.g. docker.io/reanahub/reana-datastore-s3fs:<version>)." .Values.sidecars.datastore.image | quote }}
           {{- end }}
